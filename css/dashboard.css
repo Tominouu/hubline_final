@@ -1,0 +1,269 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    font-family: 'Oswald', sans-serif;
+}
+
+.menu a.logout {
+    background-color: #dc3545;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.menu a.logout:hover {
+    background-color: #a71d2a;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.feed {
+    flex: 2;
+    margin-right: 20px;
+    min-width: 60%;
+    display: flex;
+    flex-direction: column; /* Afficher les posts verticalement */
+}
+
+.post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post img {
+    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+    height: auto; /* Conserve le ratio de l'image */
+    border-radius: 10px; /* Ajoute des bords arrondis si besoin */
+    margin-top: 10px; /* Espacement avec le texte ou autres éléments */
+    display: block; /* Supprime l'espace blanc sous l'image */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    object-position: center;
+}
+
+.post-actions button {
+    margin-right: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.post-actions button:hover {
+    background-color: black;
+}
+
+.sidebar {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 30%;
+    max-width: 300px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.welcome {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgb(52, 50, 50);
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: gray;
+    display: flex;
+    align-items: center;
+}
+
+.like-button .heart {
+    font-size: 24px;
+    color: gray;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.like-button.liked .heart {
+    color: red; /* Cœur rouge si "liké" */
+    transform: scale(1.2);
+}
+
+.like-button span {
+    margin-left: 5px;
+    font-size: 16px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.image-container {
+    width: 100%;        /* La div occupera toute la largeur de son conteneur parent */
+    max-width: 500px;   /* Largeur maximale de l'image */
+    max-height: 500px;  /* Hauteur maximale de l'image */
+    overflow: hidden;   /* Cache tout ce qui dépasse */
+    margin: 0 auto;     /* Centrer la div */
+}
+
+.image-container img {
+    width: 100%;        /* L'image prendra toute la largeur de la div */
+    height: auto;       /* La hauteur s'ajustera automatiquement pour conserver le ratio */
+}
+    
+
+
+
+
+.feed-image {
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Lightbox - affichée au clic */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Pour être au-dessus du reste */
+}
+
+/* Image dans la lightbox */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+/* Bouton de fermeture de la lightbox */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Assurer que la croix est au-dessus de l'image */
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+@media (max-width: 423.3px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .feed {
+        margin-right: 0;
+        min-width: 100%;
+    }
+
+    .sidebar {
+        min-width: 100%;
+        max-width: none;
+        margin-top: 20px;
+    }
+
+    .post {
+        padding: 10px;
+    }
+
+    .post-actions button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    form textarea {
+        height: 80px;
+    }
+
+    form button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
